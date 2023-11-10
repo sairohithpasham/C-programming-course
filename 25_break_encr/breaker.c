@@ -31,7 +31,7 @@ int main(int argc, char **argv)
   int letterCount[26] = {0};
   frequency(letterCount, file);
   int max=0;
-  for(int i = 1; i < 26; i++)
+  for(int i = 1; i < 25; i++)
     {
       if(letterCount[i] > letterCount[max])
         {

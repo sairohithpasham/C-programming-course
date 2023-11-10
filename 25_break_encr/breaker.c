@@ -31,7 +31,7 @@ int main(int argc, char **argv)
   int letterCount[26] = {0};
   frequency(letterCount, file);
   int max=0;
-  for(int i = 1; i < 25; i++)
+  for(int i = 1; i < 26; i++)
     {
       if(letterCount[i] > letterCount[max])
         {
@@ -39,10 +39,10 @@ int main(int argc, char **argv)
         }
     }
   int key;
-  if(max >= 4)
-    key = max - 4;
+  if(max >= ('a' - 'e'))
+    key = max - ('a' - 'e');
   else
-    key = 26 - 4 + max;
+    key = (26 - ('a' - 'e')) + max;
   printf("%d\n", key);
 
   if(fclose != 0)

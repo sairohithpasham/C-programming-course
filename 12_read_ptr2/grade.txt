@@ -1,0 +1,8 @@
+Grading at Sun 29 Oct 2023 06:01:09 AM UTC
+Attempting to compile test.c
+gcc -fsanitize=address -o test test.c
+compiled
+Your file matched the expected output
+Your output matched what we expected
+
+Overall Grade: PASSED

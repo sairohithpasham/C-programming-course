@@ -5,9 +5,7 @@ in it, that says
 
 hello
 
-(0) Note to Windows Users - we recommend opening the PPE 
-    in Microsoft Edge due to issues with certain emacs
-    commands in other browsers.
+
 
 (1) Use emacs to open/create a file called hello.txt
      o Type C-x C-f (Control x, then Control f) [which opens

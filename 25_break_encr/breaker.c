@@ -50,11 +50,6 @@ int main(int argc, char** argv)
   int k;
   k=frequency(file);
   printf("%d\n", k);
-
-  if(fclose(file) != 0)
-    {
-      perror("Failed to close the input file\n");
-      return EXIT_FAILURE;
-    }
+  fclose(file);
   return EXIT_SUCCESS;
 }

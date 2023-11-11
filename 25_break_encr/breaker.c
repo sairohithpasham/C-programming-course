@@ -28,7 +28,7 @@ int frequency(FILE *file)
   if(j >= ('e'-'a'))
     key = j - ('e'-'a');
   else
-    key = (26 - ('e' - 'a')) + j;
+    key = (25 - ('e' - 'a')) + j;
   return key;
 }
 

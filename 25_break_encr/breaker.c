@@ -2,10 +2,11 @@
 #include<stdlib.h>
 #include<ctype.h>
 
-void frequency(int * letterCount, FILE * f)
+int frequency(FILE * file)
 {
+  int letterCount[26] = {0};
   int c;
-  while(c = fgetc(f)!=EOF)
+  while(c = fgetc(file)!=EOF)
     {
       if(isalpha(c))
         {
@@ -13,6 +14,21 @@ void frequency(int * letterCount, FILE * f)
           letterCount[c - 'a']++;
         }
     }
+  int max=0,j=0;
+  for(int i=0;i<26;i++)
+    {
+      if(letterCount[i] > max)
+	{
+	  max = letterCount[i];
+	  j = i;
+	}
+    }
+  int key = 0;
+  if(j >= ('e'-'a'))
+    key = j - ('e'-'a');
+  else
+    key = (26 - ('e' - 'a')) + j;
+  return key;
 }
 
 int main(int argc, char **argv)
@@ -28,24 +44,9 @@ int main(int argc, char **argv)
       perror("cannot open the file");
       return EXIT_FAILURE;
     }
-  int letterCount[26] = {0};
-  frequency(letterCount, file);
-  int max=0;
-  int j = 0;
-  for(int i = 0; i < 26; i++)
-    {
-      if(letterCount[i] > max)
-        {
-          max = letterCount[i];
-	  j = i;
-        }
-    }
-  int key;
-  if(j >= ('e'-'a'))
-    key = j - ('e'-'a');
-  else
-    key = (26 - ('e' - 'a')) + j;
-  printf("%d\n", key);
+  int k;
+  k=frequency(file);
+  printf("%d\n", k);
 
   if(fclose != 0)
     {

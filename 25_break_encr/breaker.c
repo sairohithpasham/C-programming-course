@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<ctype.h>
 
-int frequency(FILE * file)
+int frequency(FILE *file)
 {
   int letterCount[26] = {0};
   int c;
@@ -11,7 +11,8 @@ int frequency(FILE * file)
       if(isalpha(c))
         {
           c = tolower(c);
-          letterCount[c - 'a']++;
+          c -= 'a';
+	  letterCount[c]++;
         }
     }
   int max=0,j=0;
@@ -31,11 +32,11 @@ int frequency(FILE * file)
   return key;
 }
 
-int main(int argc, char **argv)
+int main(int argc, char** argv)
 {
   if(argc != 2)
     {
-      fprintf(stderr,"enter exactly one command-line argument.");
+      fprintf(stderr,"enter exactly one command-line argument\n");
       return EXIT_FAILURE;
     }
   FILE *file = fopen(argv[1],"r");
@@ -48,7 +49,7 @@ int main(int argc, char **argv)
   k=frequency(file);
   printf("%d\n", k);
 
-  if(fclose != 0)
+  if(fclose(file) != 0)
     {
       perror("Failed to close the input file");
       return EXIT_FAILURE;

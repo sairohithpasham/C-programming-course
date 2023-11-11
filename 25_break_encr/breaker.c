@@ -36,12 +36,14 @@ int main(int argc, char** argv)
 {
   if(argc != 2)
     {
+      perror("enter one cl argument");
       fprintf(stderr,"enter exactly one command-line argument\n");
       return EXIT_FAILURE;
     }
   FILE *file = fopen(argv[1],"r");
   if(file==NULL)
     {
+      fprintf(stderr,"cant open the file");
       perror("cannot open the file\n");
       return EXIT_FAILURE;
     }

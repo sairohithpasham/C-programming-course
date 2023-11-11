@@ -42,7 +42,7 @@ int main(int argc, char** argv)
   FILE *file = fopen(argv[1],"r");
   if(file==NULL)
     {
-      perror("cannot open the file\n");
+      perror("cannot open the file");
       return EXIT_FAILURE;
     }
   int k;

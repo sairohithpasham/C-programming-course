@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 {
   if(argc != 2)
     {
-      fprintf(stderr,"enter exactly one command-line argument other than the name of the file");
+      fprintf(stderr,"enter exactly one command-line argument.");
       return EXIT_FAILURE;
     }
   FILE *file = fopen(argv[1],"r");
@@ -31,18 +31,20 @@ int main(int argc, char **argv)
   int letterCount[26] = {0};
   frequency(letterCount, file);
   int max=0;
-  for(int i = 1; i < 25; i++)
+  int j = 0;
+  for(int i = 0; i < 26; i++)
     {
-      if(letterCount[i] > letterCount[max])
+      if(letterCount[i] > max)
         {
-          max = i;
+          max = letterCount[i];
+	  j = i;
         }
     }
   int key;
-  if(max >= ('a' - 'e'))
-    key = max - ('a' - 'e');
+  if(j >= ('e'-'a'))
+    key = j - ('e'-'a');
   else
-    key = (26 - ('a' - 'e')) + max;
+    key = (26 - ('e' - 'a')) + j;
   printf("%d\n", key);
 
   if(fclose != 0)

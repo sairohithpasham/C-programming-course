@@ -2,54 +2,59 @@
 #include<stdlib.h>
 #include<ctype.h>
 
-int frequency(FILE *file)
-{
-  int letterCount[26] = {0};
-  int c;
-  while(c = fgetc(file)!=EOF)
-    {
-      if(isalpha(c))
-        {
-          c = tolower(c);
-          c -= 'a';
-	  letterCount[c]++;
-        }
-    }
-  int max=0,j=0;
-  for(int i=0;i<26;i++)
-    {
-      if(letterCount[i] > max)
-	{
-	  max = letterCount[i];
-	  j = i;
-	}
-    }
-  int key = 0;
-  if(j >= ('e'-'a'))
-    key = j - ('e'-'a');
-  else
-    key = (25 - ('e' - 'a')) + j;
-  return key;
-}
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
 
-int main(int argc, char** argv)
-{
-  if(argc != 2)
-    {
-      perror("enter one cl argument");
-      fprintf(stderr,"enter exactly one command-line argument\n");
-      return EXIT_FAILURE;
+int key(FILE *f){  
+  int letters[26]={0};
+  int c;
+  
+  while((c=fgetc(f)) != EOF){
+     if (isalpha(c)) {
+       c=tolower(c);
+       c -= 'a';
+       letters[c]++;
+     }
+  }
+    int max=0;
+    int j=0;
+     for (int i=0 ;i<26; i++){
+       if(letters[i] > max){
+	 max=letters[i];
+	 j=i;}
+     }
+     int key =  0;
+     if (j >= ('e' - 'a')) key=j-('e'-'a') ;
+     else key=(26-('e'-'a'))+ j; 
+     return key ;
+   }
+  
+
+  
+
+  
+int main(int argc,char** argv){
+     if (argc != 2 ){
+       fprintf(stderr,"Enter exactly one cl argument\n");
+       return EXIT_FAILURE;
+     }
+    
+    FILE * f= fopen(argv[1] ,"r");
+
+    if (f == NULL) {
+       perror("Cant open file");
+       return EXIT_FAILURE;      
     }
-  FILE *file = fopen(argv[1],"r");
-  if(file==NULL)
-    {
-      fprintf(stderr,"cant open the file");
-      perror("cannot open the file\n");
-      return EXIT_FAILURE;
+    
+    int k= key(f);
+    printf("%d\n",k);
+    
+    if (fclose(f) != 0) {
+       perror("Couldn't close the input file!");
+       return EXIT_FAILURE;
     }
-  int k;
-  k=frequency(file);
-  printf("%d\n", k);
-  fclose(file);
-  return EXIT_SUCCESS;
-}
+    
+    return EXIT_SUCCESS;
+    
+ }

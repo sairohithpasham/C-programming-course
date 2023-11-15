@@ -54,6 +54,7 @@ int main(int argc, char **argv)
       if(i==10)
 	{
 	  fprintf(stderr,"The input has more than 10 lines");
+	  return EXIT_FAILURE;
 	}
       if(strchr(arr[i],'\n') == NULL)
 	{

@@ -1,4 +1,4 @@
-Grading at Wed 15 Nov 2023 04:15:41 AM UTC
+Grading at Wed 15 Nov 2023 04:43:09 AM UTC
 Attempting to compile rotateMatrix.c
 testcase1 passed
 #################################################
@@ -8,7 +8,7 @@ testcase2 passed
 #################################################
 testcase3: blank.txt
  (should indicate an error)
-valgrind reported memory errors
+testcase3 passed
 #################################################
 testcase4: short-line.txt
  (should indicate an error)

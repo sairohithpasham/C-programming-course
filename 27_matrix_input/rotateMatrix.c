@@ -68,7 +68,7 @@ int main(int argc, char **argv)
 	}
       i++;
     }
-  if(i>10)
+  if(i<9)
     {
       fprintf(stderr,"Less than 10 lines entered\n");
       return EXIT_FAILURE;

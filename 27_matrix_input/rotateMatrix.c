@@ -67,6 +67,14 @@ int main(int argc, char **argv)
 	  return EXIT_FAILURE;
 	}
       i++;
+      if(i==10)
+	{
+	  while(c=fgetc(f)!=EOF)
+	    {
+	      fprintf(stderr,"more than 10 lines entered");
+	      return EXIT_FAILURE;
+	    }
+	}
     }
   if(i<9)
     {

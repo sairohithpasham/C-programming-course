@@ -51,6 +51,10 @@ int main(int argc, char **argv)
   char arr[10][12];
   while(fgets(arr[i],12,f)!=NULL)
     {
+      if(i==10)
+	{
+	  fprintf(stderr,"The input has more than 10 lines");
+	}
       if(strchr(arr[i],'\n') == NULL)
 	{
 	  fprintf(stderr,"A line has more than 10 elements in it.");
@@ -58,6 +62,7 @@ int main(int argc, char **argv)
 	}
       i++;
     }
+  
   rotate(arr);
   if(fclose(f)!=0)
     {

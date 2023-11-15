@@ -1,8 +1,8 @@
-Grading at Wed 15 Nov 2023 05:41:44 AM UTC
+Grading at Wed 15 Nov 2023 05:42:44 AM UTC
 Attempting to compile rotateMatrix.c
 rotateMatrix.c: In function ‘main’:
 rotateMatrix.c:45:10: error: variable ‘g’ set but not used [-Werror=unused-but-set-variable]
-   45 |   FILE * g = f;
+   45 |   FILE * g;
       |          ^
 cc1: all warnings being treated as errors
 The code did not compile!

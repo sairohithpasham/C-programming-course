@@ -62,6 +62,11 @@ int main(int argc, char **argv)
 	}
       i++;
     }
+  if(i<9)
+    {
+      fprintf(stderr,"Less than 10 lines entered");
+          return EXIT_FAILURE;
+    }
   
   rotate(arr);
   if(fclose(f)!=0)

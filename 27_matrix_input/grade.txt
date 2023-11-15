@@ -1,10 +1,10 @@
-Grading at Wed 15 Nov 2023 04:04:57 AM UTC
+Grading at Wed 15 Nov 2023 04:10:04 AM UTC
 Attempting to compile rotateMatrix.c
 testcase1 passed
 #################################################
 testcase2: NonExistentFile
  (should indicate an error)
-valgrind reported memory errors
+testcase2 passed
 #################################################
 testcase3: blank.txt
  (should indicate an error)

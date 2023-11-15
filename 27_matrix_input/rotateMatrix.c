@@ -61,7 +61,7 @@ int main(int argc, char **argv)
 	  fprintf(stderr,"A line has more than 10 elements in it.\n");
 	  return EXIT_FAILURE;
 	}
-      if(strlen(arr[i])<10)
+      if(strlen(arr[i])<11)
 	{
 	  fprintf(stderr,"A line has less than 10 elements in it.\n");
 	  return EXIT_FAILURE;

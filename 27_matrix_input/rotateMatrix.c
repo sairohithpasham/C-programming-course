@@ -42,6 +42,7 @@ int main(int argc, char **argv)
       return EXIT_FAILURE;
     }
   FILE * f = fopen(argv[1],"r");
+  FILE * g;
   if(f == NULL)
     {
       fprintf(stderr,"File cant be opened\n");
@@ -51,6 +52,16 @@ int main(int argc, char **argv)
   char arr[10][12];
   while(fgets(arr[i],12,f)!=NULL)
     {
+      if(i<9)
+	{
+	  g = f;
+	  int d;
+	  while((d=fgetc(f))==EOF)
+	    {
+	      fprintf(stderr,"less than 10 lines entered 2");
+	      return EXIT_FAILURE;
+	    }
+	}
       if(i>=10)
 	{
 	  fprintf(stderr,"The input has more than 10 lines\n");

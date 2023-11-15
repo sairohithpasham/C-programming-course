@@ -51,7 +51,7 @@ int main(int argc, char **argv)
   char arr[10][12];
   while(fgets(arr[i],12,f)!=NULL)
     {
-      if(i>=10)
+      if(i>=9)
 	{
 	  fprintf(stderr,"The input has more than 10 lines\n");
 	  return EXIT_FAILURE;

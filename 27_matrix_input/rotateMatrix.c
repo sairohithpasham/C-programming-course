@@ -69,6 +69,7 @@ int main(int argc, char **argv)
       i++;
       if(i==10)
 	{
+	  int c;
 	  while(c=fgetc(f)!=EOF)
 	    {
 	      fprintf(stderr,"more than 10 lines entered");

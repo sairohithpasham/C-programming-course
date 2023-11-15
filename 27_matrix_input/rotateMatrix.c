@@ -51,27 +51,27 @@ int main(int argc, char **argv)
   char arr[10][12];
   while(fgets(arr[i],12,f)!=NULL)
     {
-      if(i==10)
+      if(i>=10)
 	{
-	  fprintf(stderr,"The input has more than 10 lines");
+	  fprintf(stderr,"The input has more than 10 lines\n");
 	  return EXIT_FAILURE;
 	}
       if(strchr(arr[i],'\n') == NULL)
 	{
-	  fprintf(stderr,"A line has more than 10 elements in it.");
+	  fprintf(stderr,"A line has more than 10 elements in it.\n");
 	  return EXIT_FAILURE;
 	}
       if(strlen(arr[i])<10)
 	{
-	  fprintf(stderr,"A line has less than 10 elements in it.");
+	  fprintf(stderr,"A line has less than 10 elements in it.\n");
 	  return EXIT_FAILURE;
 	}
       i++;
     }
   if(i<9)
     {
-      fprintf(stderr,"Less than 10 lines entered");
-          return EXIT_FAILURE;
+      fprintf(stderr,"Less than 10 lines entered\n");
+      return EXIT_FAILURE;
     }
   
   rotate(arr);

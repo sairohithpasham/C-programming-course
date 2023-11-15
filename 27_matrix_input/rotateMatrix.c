@@ -42,7 +42,6 @@ int main(int argc, char **argv)
       return EXIT_FAILURE;
     }
   FILE * f = fopen(argv[1],"r");
-  FILE * g;
   if(f == NULL)
     {
       fprintf(stderr,"File cant be opened\n");

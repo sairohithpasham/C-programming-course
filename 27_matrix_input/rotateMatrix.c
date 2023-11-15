@@ -43,7 +43,6 @@ int main(int argc, char **argv)
     }
   FILE * f = fopen(argv[1],"r");
   FILE * g;
-  g = f;
   if(f == NULL)
     {
       fprintf(stderr,"File cant be opened\n");
@@ -53,6 +52,7 @@ int main(int argc, char **argv)
   char arr[10][12];
   while(fgets(arr[i],12,f)!=NULL)
     {
+      g = f;
       if(i<9)
 	{
 	  g = f;

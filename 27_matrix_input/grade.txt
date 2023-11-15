@@ -1,10 +1,10 @@
-Grading at Wed 15 Nov 2023 05:26:25 AM UTC
+Grading at Wed 15 Nov 2023 05:27:06 AM UTC
 Attempting to compile rotateMatrix.c
 rotateMatrix.c: In function ‘main’:
-rotateMatrix.c:72:10: error: ‘c’ undeclared (first use in this function)
-   72 |    while(c=fgetc(f)!=EOF)
+rotateMatrix.c:73:10: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+   73 |    while(c=fgetc(f)!=EOF)
       |          ^
-rotateMatrix.c:72:10: note: each undeclared identifier is reported only once for each function it appears in
+cc1: all warnings being treated as errors
 The code did not compile!
 
 Overall Grade: F

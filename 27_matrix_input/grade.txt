@@ -1,4 +1,4 @@
-Grading at Wed 15 Nov 2023 05:47:13 AM UTC
+Grading at Wed 15 Nov 2023 05:52:47 AM UTC
 Attempting to compile rotateMatrix.c
 testcase1 passed
 #################################################
@@ -20,7 +20,7 @@ testcase5 passed
 #################################################
 testcase6: long-line.txt
  (should indicate an error)
-testcase6 passed
+testcase6 failed, your program didn't indicate this is a failure case
 #################################################
 testcase7: long-file.txt
  (should indicate an error)
@@ -35,18 +35,94 @@ testcase9: normal1.txt normal2.txt
 testcase9 passed
 #################################################
 testcase10: normal1.txt
+Line_1_did_not_match
+Line_2_did_not_match
+Line_3_did_not_match
+Line_4_did_not_match
+Line_5_did_not_match
+Line_6_did_not_match
+Line_7_did_not_match
+Line_8_did_not_match
+Line_9_did_not_match
+Line_10_did_not_match
+Line_11_did_not_match
+Line_12_did_not_match
+Line_13_did_not_match
+Line_14_did_not_match
+Line_15_did_not_match
+Line_16_did_not_match
+Line_17_did_not_match
+Line_18_did_not_match
+Line_19_did_not_match
 Your file did not match the expected ouput
 testcase10 failed, your output did not match with the answer
 #################################################
 testcase10: normal2.txt
+Line_1_did_not_match
+Line_2_did_not_match
+Line_3_did_not_match
+Line_4_did_not_match
+Line_5_did_not_match
+Line_6_did_not_match
+Line_7_did_not_match
+Line_8_did_not_match
+Line_9_did_not_match
+Line_10_did_not_match
+Line_11_did_not_match
+Line_12_did_not_match
+Line_13_did_not_match
+Line_14_did_not_match
+Line_15_did_not_match
+Line_16_did_not_match
+Line_17_did_not_match
+Line_18_did_not_match
+Line_19_did_not_match
 Your file did not match the expected ouput
 testcase10 failed, your output did not match with the answer
 #################################################
 testcase10: normal3.txt
+Line_1_did_not_match
+Line_2_did_not_match
+Line_3_did_not_match
+Line_4_did_not_match
+Line_5_did_not_match
+Line_6_did_not_match
+Line_7_did_not_match
+Line_8_did_not_match
+Line_9_did_not_match
+Line_10_did_not_match
+Line_11_did_not_match
+Line_12_did_not_match
+Line_13_did_not_match
+Line_14_did_not_match
+Line_15_did_not_match
+Line_16_did_not_match
+Line_17_did_not_match
+Line_18_did_not_match
+Line_19_did_not_match
 Your file did not match the expected ouput
 testcase10 failed, your output did not match with the answer
 #################################################
 testcase10: eof.txt
+Line_1_did_not_match
+Line_2_did_not_match
+Line_3_did_not_match
+Line_4_did_not_match
+Line_5_did_not_match
+Line_6_did_not_match
+Line_7_did_not_match
+Line_8_did_not_match
+Line_9_did_not_match
+Line_10_did_not_match
+Line_11_did_not_match
+Line_12_did_not_match
+Line_13_did_not_match
+Line_14_did_not_match
+Line_15_did_not_match
+Line_16_did_not_match
+Line_17_did_not_match
+Line_18_did_not_match
+Line_19_did_not_match
 Your file did not match the expected ouput
 testcase10 failed, your output did not match with the answer
  (Maybe you mishandled reading character 0xFF?)

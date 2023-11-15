@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<ctype.h>
+
+int main(int argc, char **argv)
+{
+  if(argc != 2)
+    {
+      fprintf(stderr,"Enter only one cl argument\n");
+      return EXIT_FAILURE;
+    }
+  FILE * f = fopen(argv[1],"r");
+  if(f == NULL)
+    {
+      fprintf(stderr,"File cant be opened\n");
+    }
+  char arr[10];
+  while(fgets(arr,"12",f)!=NULL)
+    {
+      if(strchr(arr,"\n") == NULL)
+	{
+	  fprintf(stderr,"A line has more than 10 elements in it.");
+	  return EXIT_FAILURE;
+	}
+      printf("%s",arr);
+    }
+}

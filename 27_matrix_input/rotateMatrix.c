@@ -45,6 +45,7 @@ int main(int argc, char **argv)
   if(f == NULL)
     {
       fprintf(stderr,"File cant be opened\n");
+      return EXIT_FAILURE;
     }
   int i=0;
   char arr[10][12];
@@ -58,6 +59,10 @@ int main(int argc, char **argv)
       i++;
     }
   rotate(arr);
-  fclose(f);
+  if(fclose(f)!=0)
+    {
+      fprintf(stderr,"file cant be closed\n");
+      return EXIT_FAILURE;
+    }
   return EXIT_SUCCESS;
 }

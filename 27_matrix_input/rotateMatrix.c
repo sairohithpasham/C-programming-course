@@ -56,7 +56,7 @@ int main(int argc, char **argv)
 	{
 	  g = f;
 	  int d;
-	  while((d=fgetc(g))==EOF)
+	  if((d=fgetc(g))==EOF)
 	    {
 	      fprintf(stderr,"less than 10 lines entered 2");
 	      return EXIT_FAILURE;

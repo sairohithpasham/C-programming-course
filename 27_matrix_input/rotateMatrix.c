@@ -52,12 +52,11 @@ int main(int argc, char **argv)
   char arr[10][12];
   while(fgets(arr[i],12,f)!=NULL)
     {
-      g = f;
       if(i<9)
 	{
 	  g = f;
 	  int d;
-	  while((d=fgetc(f))==EOF)
+	  while((d=fgetc(g))==EOF)
 	    {
 	      fprintf(stderr,"less than 10 lines entered 2");
 	      return EXIT_FAILURE;

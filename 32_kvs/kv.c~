@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "kv.h"
+
+
+
+kvarray_t * readKVs(const char * fname) {
+  //WRITE ME
+  FILE * f = fopen(fname,"r");
+  if(f==NULL){
+    fprintf(stderr,"File cant be opened");
+    return NULL;
+  }
+  size_t sz = 0;
+  char * line = NULL;
+  kvpair_t *current_pair = NULL;
+  kvarray_t *array;
+  array->
+  
+}
+
+void freeKVs(kvarray_t * pairs) {
+  //WRITE ME
+}
+
+void printKVs(kvarray_t * pairs) {
+  //WRITE ME
+}
+
+char * lookupValue(kvarray_t * pairs, const char * key) {
+  //WRITE ME
+}

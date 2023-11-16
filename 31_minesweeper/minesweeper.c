@@ -42,11 +42,11 @@ void addRandomMine(board_t * b) {
 
 board_t * makeBoard(int w, int h, int numMines) {
   //WRITE ME!
-  board_t *boards = malloc(sizeof(*boards));
-  boards->width = w;
-  boards->height = h;
-  boards->totalMines = numMines;
-  int **b = malloc(h*sizeof(*b));
+  board_t *b = malloc(sizeof(*b));
+  b->width = w;
+  b->height = h;
+  b->totalMines = numMines;
+  int **m = malloc(h*sizeof(*m));
   for(int i = 0;i<h;i++)
     {
       int * line = malloc(w*sizeof(*line));
@@ -54,16 +54,16 @@ board_t * makeBoard(int w, int h, int numMines) {
 	{
 	  line[j] = UNKNOWN;
 	}
-      b[i] = line;
+      m[i] = line;
       line = NULL;
       free(line);
     }
-  boards->board = b;
+  b->board = m;
   for(int i = 0; i < numMines; i++)
     {
-      addRandomMine(boards);
+      addRandomMine(b);
     }
-  return boards;
+  return b;
 }
 void printBoard(board_t * b) {    
   int found = 0;
@@ -127,7 +127,7 @@ int countMines(board_t * b, int x, int y) {
 	  if(i>=0 && i<b->height && j<b->width && j>=0)
 	    {
 	      if(IS_MINE(b->board[i][j]))
-		count++;
+		count+=1;
 	    }
 	}
     }
@@ -158,8 +158,9 @@ int checkWin(board_t * b) {
     {
       for(int j = 0;j<b->width;j++)
 	{
-	  if(b->board[i][j]==UNKNOWN)
+	  if(b->board[i][j]==UNKNOWN){
 	    return 0;
+	  }
 	}
     }
   return 1;

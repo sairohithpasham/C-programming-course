@@ -59,7 +59,8 @@ int main(int argc, char ** argv) {
     free(c);
 
   }
+  
  //free the memory for kv
-
+  freeKVs(k);
   return EXIT_SUCCESS;
 }

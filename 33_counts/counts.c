@@ -17,40 +17,23 @@ void addCount(counts_t * c, const char * name) {
     return;
   }
   else{
-    one_count_t * a = NULL;
-    int flag = 0;
-    for(int i =0; i < c->len;i++)
+    int len = c->len;
+    char *entry = strdup(name);
+    c->arr = realloc(c->arr, (c->len+1)*sizeof(* c->arr));
+    for(int i=0; i<c->len;i++)
       {
-	a = c->arr[i];
-	if(!strcmp(a->str,name)){
-	  a->count ++;
-	  flag = 1;
-	  break;
+	if(strcmp(c->arr[i]->str,name) == 0){
+	  c->arr[i] -> count++;
+	  free(entry);
+	  return;
 	}
       }
-    if(flag == 0){
-      one_count_t *b = NULL;
-      b = malloc(sizeof(*b));
-      if(b==NULL)
-	return;
-      b->str = malloc(strlen(name)+8);
-      if(b->str == NULL){
-	free(b);
-	return;
-      }
-      strcpy(b->str, name);
-      b->count = 1;
-      c->arr = realloc(c->arr,(c->len+1)*sizeof(*c->arr));
-      if(c->arr == NULL){
-	free(b->str);
-	free(b);
-	return;
-      }
-      c->arr[c->len] = b;
-      c->len ++;
-    }
+    c->arr[len] = malloc(sizeof(*c->arr[len]));
+    c->arr[len]->str = entry;
+    c->arr[len]->count = 1;
+    c->len++;
   }
-  
+  return;
 }
 void printCounts(counts_t * c, FILE * outFile) {
   //WRITE ME

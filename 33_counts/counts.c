@@ -14,6 +14,7 @@ void addCount(counts_t * c, const char * name) {
   //WRITE ME
   if(name == NULL){
     c->len_unknown ++;
+    return;
   }
   else{
     one_count_t * a = NULL;
@@ -24,19 +25,32 @@ void addCount(counts_t * c, const char * name) {
 	if(!strcmp(a->str,name)){
 	  a->count ++;
 	  flag = 1;
+	  break;
 	}
       }
     if(flag == 0){
       one_count_t *b = NULL;
       b = malloc(sizeof(*b));
+      if(b==NULL)
+	return;
       b->str = malloc(strlen(name)+8);
+      if(b->str == NULL){
+	free(b);
+	return;
+      }
       strcpy(b->str, name);
       b->count = 1;
       c->arr = realloc(c->arr,(c->len+1)*sizeof(*c->arr));
+      if(c->arr == NULL){
+	free(b->str);
+	free(b);
+	return;
+      }
       c->arr[c->len] = b;
       c->len ++;
     }
   }
+  
 }
 void printCounts(counts_t * c, FILE * outFile) {
   //WRITE ME

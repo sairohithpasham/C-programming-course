@@ -1,28 +1,24 @@
-Grading at Sat 18 Nov 2023 06:41:23 PM UTC
+Grading at Sat 18 Nov 2023 06:44:15 PM UTC
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
-input.c:9:45: error: unknown type name ‘future_card_t’; did you mean ‘future_cards_t’?
-    9 | deck_t * hand_from_string(const char * str, future_card_t * fc)
-      |                                             ^~~~~~~~~~~~~
-      |                                             future_cards_t
-input.c: In function ‘read_input’:
-input.c:50:28: error: ordered comparison of pointer with integer zero [-Werror=pedantic]
-   50 |   while(getline(&line,&sz,f>=0))
-      |                            ^~
-input.c:50:28: error: passing argument 3 of ‘getline’ makes pointer from integer without a cast [-Werror=int-conversion]
-   50 |   while(getline(&line,&sz,f>=0))
-      |                           ~^~~
-      |                            |
-      |                            int
-In file included from input.c:4:
-/usr/include/stdio.h:618:44: note: expected ‘FILE * restrict’ {aka ‘struct _IO_FILE * restrict’} but argument is of type ‘int’
-  618 |                           FILE *__restrict __stream) __wur;
-      |                           ~~~~~~~~~~~~~~~~~^~~~~~~~
-input.c:53:22: error: implicit declaration of function ‘hand_from_string’ [-Werror=implicit-function-declaration]
-   53 |       deck_t *deck = hand_from_string(line,fc);
-      |                      ^~~~~~~~~~~~~~~~
-input.c:53:22: error: initialization of ‘deck_t *’ {aka ‘struct deck_tag *’} from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+input.c: In function ‘hand_from_string’:
+input.c:26:10: error: ‘n’ undeclared (first use in this function)
+   26 |   number[n] = str[i];
+      |          ^
+input.c:26:10: note: each undeclared identifier is reported only once for each function it appears in
+input.c:31:32: error: ‘num’ undeclared (first use in this function)
+   31 |        add_future_card(fc,atoi(num),add_empty_card(deck));
+      |                                ^~~
+input.c:23:13: error: variable ‘number’ set but not used [-Werror=unused-but-set-variable]
+   23 |        char number[strlen(str)];
+      |             ^~~~~~
+input.c:35:23: error: ‘x’ undeclared (first use in this function)
+   35 |      add_card_to(deck,x);
+      |                       ^
+input.c:34:13: error: unused variable ‘a’ [-Werror=unused-variable]
+   34 |      card_t a = card_from_letters(str[i],str[i+1]);
+      |             ^
 cc1: all warnings being treated as errors
 Compilation of input.c failed
 

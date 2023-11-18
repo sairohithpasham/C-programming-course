@@ -50,7 +50,7 @@ void printCounts(counts_t * c, FILE * outFile) {
 
 void freeCounts(counts_t * c) {
   //WRITE ME
-  for(int i = 0; i < c->len; i++){
+  for(int i = 0; i <= c->len; i++){
     free(c->arr[i]->str);
     free(c->arr[i]);
     }

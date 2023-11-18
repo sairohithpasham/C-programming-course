@@ -28,11 +28,11 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc)
 		c++;
 	      }
 	      number[c] = '\0';
-	      add_future_card(fc,atoi(num),add_empty_card(deck));
+	      add_future_card(fc,atoi(number),add_empty_card(deck));
 	    }
 	  else{
 	    card_t a = card_from_letters(str[i],str[i+1]);
-	    add_card_to(deck,x);
+	    add_card_to(deck,a);
 	    i++;
 	  }
 	}

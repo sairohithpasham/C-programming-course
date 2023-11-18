@@ -205,7 +205,7 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 unsigned helper(deck_t * hand,card_t card)
 {
   unsigned count = 0;
-  for(i=0;i<hand->n_cards;i++)
+  for(int i=0;i<hand->n_cards;i++)
     {
       if(hand->cards[i]->value == card.value){
 	count++;

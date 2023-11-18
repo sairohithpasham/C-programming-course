@@ -66,7 +66,7 @@ deck_t * make_deck_exclude(deck_t * excluded_cards)
   deck->n_cards = 0;
   for(int i = 0; i < 52; i++)
     {
-      card_t card = card_from_num(c);
+      card_t card = card_from_num(i);
       if(!deck_contains(excluded_cards,card)){
 	add_card_to(deck,card);
       }

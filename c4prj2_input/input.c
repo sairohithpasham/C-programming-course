@@ -23,7 +23,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc)
 	      char number[strlen(str)];
 	      int c = 0;
 	      while(!((str[i] == '\n')||(str[i] == ' '))){
-		number[n] = str[i];
+		number[c] = str[i];
 		i++;
 		c++;
 	      }

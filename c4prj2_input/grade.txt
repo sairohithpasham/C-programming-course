@@ -1,4 +1,4 @@
-Grading at Sat 18 Nov 2023 06:44:15 PM UTC
+Grading at Sat 18 Nov 2023 06:45:58 PM UTC
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
@@ -7,19 +7,6 @@ input.c:26:10: error: ‘n’ undeclared (first use in this function)
    26 |   number[n] = str[i];
       |          ^
 input.c:26:10: note: each undeclared identifier is reported only once for each function it appears in
-input.c:31:32: error: ‘num’ undeclared (first use in this function)
-   31 |        add_future_card(fc,atoi(num),add_empty_card(deck));
-      |                                ^~~
-input.c:23:13: error: variable ‘number’ set but not used [-Werror=unused-but-set-variable]
-   23 |        char number[strlen(str)];
-      |             ^~~~~~
-input.c:35:23: error: ‘x’ undeclared (first use in this function)
-   35 |      add_card_to(deck,x);
-      |                       ^
-input.c:34:13: error: unused variable ‘a’ [-Werror=unused-variable]
-   34 |      card_t a = card_from_letters(str[i],str[i+1]);
-      |             ^
-cc1: all warnings being treated as errors
 Compilation of input.c failed
 
 Overall Grade: F

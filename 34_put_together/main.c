@@ -56,7 +56,7 @@ int main(int argc, char ** argv) {
       return EXIT_FAILURE;
     //free the memory for outName and c
     free(outName);
-    free(c);
+    freeCounts(c);
 
   }
   

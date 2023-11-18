@@ -202,15 +202,32 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
   return 0;
 }
 
-
+unsigned helper(deck_t * hand,card_t card)
+{
+  unsigned count = 0;
+  for(i=0;i<hand->n_cards;i++)
+    {
+      if(hand->cards[i]->value == card.value){
+	count++;
+      }
+    }
+  return count;
+}
 
 //You will write this function in Course 4.
 //For now, we leave a prototype (and provide our
 //implementation in eval-c4.o) so that the
 //other functions we have provided can make
 //use of get_match_counts.
-unsigned * get_match_counts(deck_t * hand) ;
-
+unsigned * get_match_counts(deck_t * hand)
+{
+  unsigned *counts = malloc(hand->n_cards*sizeof(*counts));
+  for(int i=0;i<hand->n_cards;i++)
+    {
+      counts[i] = helper(hand,*hand->cards[i]);
+    }
+  return counts;
+}
 // We provide the below functions.  You do NOT need to modify them
 // In fact, you should not modify them!
 

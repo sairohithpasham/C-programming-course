@@ -1,0 +1,17 @@
+Grading at Sun 19 Nov 2023 10:36:29 PM UTC
+Running 'make clean' to do a clean build of your project
+rm -rf *.o poker *~
+Running 'make poker OTHERFLAGS=-O3' to build your project
+cc    -c -o cards.o cards.c
+cc    -c -o deck.o deck.c
+cc    -c -o eval.o eval.c
+cc    -c -o future.o future.c
+cc    -c -o input.o input.c
+cc    -c -o main.o main.c
+gcc -o -Wall -Werror -ggdb3 -std=gnu99 -pedantic
+gcc: fatal error: no input files
+compilation terminated.
+make: *** [makefile:2: poker] Error 1
+make failed
+
+Overall Grade: F

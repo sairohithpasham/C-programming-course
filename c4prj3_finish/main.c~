@@ -8,7 +8,7 @@
 #include "future.h"
 #include "input.h"
 
-void monte_carlo_trial(deck_t **hands,size_t n_hands, deck_t *deck, unsigned *wins, future_cards_t *fc)
+void monte_carlo_trial(deck_t **hands,size n_hands, deck_t *deck, unsigned *wins, future_cards_t *fc)
 {
   shuffle(deck);
   future_cards_from_deck(deck,fc);
@@ -17,11 +17,11 @@ void monte_carlo_trial(deck_t **hands,size_t n_hands, deck_t *deck, unsigned *wi
   int isTie = 0;
   for(int i = 1; i < n_hands; i++)
     {
-      int result = compare_hands(winningHand, hands[i]);
+      int result = compare_hands(winnerHand, hands[i]);
       if(result < 0)
 	{
 	  winning_index - i;
-	  winningHand = hands[i];
+	  winnerHand = hands[i];
 	  isTie = 0;
 	}
       else if(result == 0)
@@ -38,7 +38,7 @@ void monte_carlo_trial(deck_t **hands,size_t n_hands, deck_t *deck, unsigned *wi
       wins[n_hands]++;
     }
   else
-    wins[winning_index]++;
+    win[winning_index]++;
 }
 
 
@@ -48,7 +48,7 @@ int main(int argc, char ** argv) {
     return EXIT_FAILURE;
   unsigned num_trials = 10000;
   if(argc == 3){
-    num_trials = atoi(argv[2]);
+    num_trails = atoi(argv[2]);
   }
   FILE *f = fopen(argv[1],"r");
   if(f == NULL)
@@ -56,7 +56,7 @@ int main(int argc, char ** argv) {
       fprintf(stderr, "Cant open the file");
       return EXIT_FAILURE;
     }
-  future_cards_t *fc = malloc(sizeof(*fc));
+  future_cards *fc = malloc(sizeof(*fc));
   fc->decks = NULL;
   fc->n_decks = 0;
   size_t n_hands = 0;
@@ -67,14 +67,14 @@ int main(int argc, char ** argv) {
     {
       win[i] = 0;
     }
-  for(int i=0;i<num_trials;i++)
+  for(i=0;i<num_trails;i++)
     {
       monte_carlo_trial(hands,n_hands,deck,win,fc);
     }
   for(int i =0; i<n_hands;i++)
     {
-      double percentage_win = ((double)win[i]/num_trials)*100;
-      printf("Hand %d won %u / %u times (%.2f%%)\n", i , win[i],num_trials,percentage_win);
+      double perctage_win = ((double)win[i]/num_trials)*100;
+      printf("Hand %zu won %u / %u times (%.2ld%%)\n", i , win[i],num_trials,percentage_win);
     }
   printf("And there were %u ties\n", win[n_hands]);
   for(int i =0;i<n_hands;i++)

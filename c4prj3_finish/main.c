@@ -20,7 +20,7 @@ void monte_carlo_trial(deck_t **hands,size_t n_hands, deck_t *deck, unsigned *wi
       int result = compare_hands(winningHand, hands[i]);
       if(result < 0)
 	{
-	  winning_index - i;
+	  winning_index = i;
 	  winningHand = hands[i];
 	  isTie = 0;
 	}
